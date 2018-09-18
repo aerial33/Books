@@ -1,6 +1,6 @@
 
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class:"account__form" }) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class:"form-signin" }) do |f| %>
   <%= f.error_notification %>
   <h2>Change your password</h2>
   <%= f.input :reset_password_token, as: :hidden %>
