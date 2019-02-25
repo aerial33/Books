@@ -1,5 +1,5 @@
 <% content_for(:navbar_class,"navbar-home") %>
-<div>
+
   <div class="banner">
     <div class="banner-content">
       <h1>Welcome to Bookshop</h1>
@@ -8,13 +8,13 @@
         <i class="glyphicon fa fa-search"></i>
         <input type="text" class="Search" placeholder="Search by title or Author..." />
       </form>
+      <div class='icon-scroll'></div>
     </div>
   </div>
-    <div class="container">
-      <div class="row">
-        <%= render @books %>
 
-      </div>
-
+  <div class="container">
+    <div class="row">
+      <%= render @books %>
     </div>
+
   </div>
