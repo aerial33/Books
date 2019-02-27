@@ -3,11 +3,13 @@
       <%= image_tag "book.jpg", class: "img-responsive" %>
     </div>
     <div class="col-md-8">
-      <h3><%= @book.name %> by <%= @book.author %></h3>
+      <h3><%= @book.name %></h3>
+      <p>Auteur : <strong><%= @book.author %></strong></p>
       <p><%= @book.description %></p>
       <h4 class="text-center"><%= @book.price.to_f / 100 %>€</h4>
     </div>
   </div>
-
+<% if policy(@book).edit? %>
   <%= link_to 'Edit', edit_book_path(@book) %> |
-  <%= link_to 'Back', books_path %>
+<% end %>
+  <%= link_to 'Back', :back %>

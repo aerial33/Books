@@ -5,7 +5,8 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.where(availability: true)
+    # @books = Book.where(availability: true)
+    @books = policy_scope(Book)
   end
 
   # GET /books/1
@@ -16,6 +17,7 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+    authorize @book
   end
 
   # GET /books/1/edit
@@ -26,6 +28,7 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = current_user.books.build(book_params)
+    authorize @book
     respond_to do |format|
       if @book.save
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
@@ -60,6 +63,7 @@ class BooksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_book
       @book = Book.find(params[:id])
+      authorize @book
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
