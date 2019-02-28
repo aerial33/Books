@@ -1,6 +1,6 @@
   <div class="row">
     <div class="col-md-4">
-      <%= image_tag "book.jpg", class: "img-responsive" %>
+      <%= image_tag @book.image.url(:original), class: "img-responsive" %>
     </div>
     <div class="col-md-8">
       <h3><%= @book.name %></h3>
@@ -12,4 +12,4 @@
 <% if policy(@book).edit? %>
   <%= link_to 'Edit', edit_book_path(@book) %> |
 <% end %>
-  <%= link_to 'Back', :back %>
+  <%= link_to 'Back', books_path %>
