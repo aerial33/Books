@@ -11,6 +11,7 @@ gem 'rails', '5.2.1'
 gem 'redis'
 gem 'pundit'
 gem 'paperclip'
+gem 'aws-sdk'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
