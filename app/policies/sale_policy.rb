@@ -5,6 +5,10 @@ class SalePolicy < ApplicationPolicy
     end
   end
 
+  def create?
+    true
+  end
+
   def pickup?
     record.buyer_email == user.email
   end
