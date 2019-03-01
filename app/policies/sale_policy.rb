@@ -6,6 +6,6 @@ class SalePolicy < ApplicationPolicy
   end
 
   def pickup?
-    true
+    record.buyer_email == user.email
   end
 end
