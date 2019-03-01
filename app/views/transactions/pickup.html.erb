@@ -1,6 +1,8 @@
 
 <div class="row text-center">
-  <h1>Congratulation on your order <%= @sale.guid %></h1>
+  <h1>Thanks for buying: <br>
+    <i>"<%= @sale.book.slug %>"</i>
+  </h1>
   <p>Here is your download link:</p>
   <%= link_to "Download", "#"  %> |
   <%= link_to "Back", dashboard_path  %>
