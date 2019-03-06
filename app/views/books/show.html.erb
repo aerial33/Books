@@ -1,6 +1,9 @@
   <div class="row">
     <div class="col-md-4">
-      <%= image_tag @book.image.url(:original), class: "img-responsive" %>
+      <% if @book.picture.attached? %>
+        <%= image_tag @book.picture, class: "img-responsive" %>
+      <% end %>
+
     </div>
     <div class="col-md-8">
       <h3><%= @book.name %></h3>
