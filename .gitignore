@@ -13,8 +13,8 @@ node_modules
 yarn-error.log
 .byebug_history
 .env
-config/master.key
-config/credentials.yml.enc
+/config/master.key
+/config/credentials.yml.enc
 
 # Ignore application configuration
 /config/application.yml
