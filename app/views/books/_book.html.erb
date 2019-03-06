@@ -2,7 +2,9 @@
   <div class="col-md-3">
     <div class="thumbnail">
       <%= link_to book_path(book) do %>
-        <%= image_tag book.image.url(:original), class: "img-responsive" %>
+        <% if book.picture.attached? %>
+          <%= image_tag book.picture, class: "img-responsive" %>
+        <% end %>
       <% end %>
       <div class="caption">
         <p><strong><%= link_to book.name, book_path(book) %></strong></p>
